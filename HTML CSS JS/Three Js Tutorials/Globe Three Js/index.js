@@ -28,7 +28,8 @@ const mesh = new THREE.Mesh(geometry, material)
 scene.add(mesh)
 
 // Create a light
-const light = new THREE.HemisphereLight(0xffffff)
+const light = new THREE.DirectionalLight(0xffffff, 1)
+light.position.set(1, 1, 0)
 scene.add(light)
 
 // Create a orbit controls
@@ -40,6 +41,10 @@ controls.dampingFactor = 0.25
 function animate() {
     requestAnimationFrame(animate)
     controls.update()
+
+    // Rotate the earth slowly
+    mesh.rotation.y += 0.002
+
     renderer.render(scene, camera)
 }
 
