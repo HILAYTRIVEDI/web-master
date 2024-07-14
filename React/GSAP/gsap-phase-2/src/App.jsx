@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react'
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () =>
+{
+  const circleRef = useRef(null);
+  const [count, setCount] = useState(0);
+
+  // Use context safe to do memory management
+  const { contextSafe } = useGSAP();
+
+  const rotate = contextSafe(() =>
+  {
+    setCount((prevCount) => gsap.utils.random(100, 500, 10));
+    gsap.to(circleRef.current, {
+      rotation: 360,
+      x: count,
+    });
+  });
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <main>
+      <button onClick={rotate} className="animination-btn">
+        Animate
+      </button>
+      <div ref={circleRef} id="circle"></div>
+    </main>
+  );
+};
 
-export default App
+export default App;
