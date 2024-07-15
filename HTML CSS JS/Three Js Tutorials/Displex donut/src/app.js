@@ -3,11 +3,11 @@ import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass';
 import { FXAAShader } from 'three/examples/jsm/shaders/FXAAShader';
 import { SMAAPass } from 'three/examples/jsm/postprocessing/SMAAPass';
-import { init, gl, scene, camera, controls } from './init/init';
+import { init, gl, scene, camera, controls } from './init/init.js';
 
 import vertexShader from './shaders/vertex.js';
 import fragmentShader from './shaders/fragment.js';
-import { GUI } from './init/lil-gui.module.min';
+import { GUI } from './init/lil-gui.module.min.js';
 import './style.css';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass';
