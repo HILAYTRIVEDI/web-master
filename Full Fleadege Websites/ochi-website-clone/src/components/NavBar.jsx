@@ -3,7 +3,7 @@ import React from 'react'
 const NavBar = () =>
 {
     return (
-        <header className='w-full font-[NeueMontreal] fixed top-0 py-8 px-20 z-20 flex justify-between items-center'>
+        <header className='w-full font-[NeueMontreal] py-8 px-20 z-20 flex justify-between items-center'>
             <div className="logo">
                 <a href="http://localhost:3000/">
                     <svg width="72" height="30" viewBox="0 0 72 30" fill="none" xmlns="http://www.w3.org/2000/svg">
