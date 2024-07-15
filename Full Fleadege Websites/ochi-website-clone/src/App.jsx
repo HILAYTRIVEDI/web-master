@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavBar , LandingPage, Marquee } from './components'
+import { NavBar , LandingPage, Marquee, PlayGround } from './components'
 
 const App = () => {
   return (
@@ -7,6 +7,7 @@ const App = () => {
         <NavBar />
         <LandingPage />
         <Marquee />
+        <PlayGround />
     </main>
   )
 }
