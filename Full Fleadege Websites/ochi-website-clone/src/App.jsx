@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavBar , LandingPage, Marquee, PlayGround, Featured } from './components'
+import { NavBar , LandingPage, Marquee, PlayGround, Featured, Footer } from './components'
 
 const App = () => {
   return (
@@ -9,6 +9,7 @@ const App = () => {
         <Marquee />
         <PlayGround />
         <Featured />
+        <Footer />
     </main>
   )
 }
