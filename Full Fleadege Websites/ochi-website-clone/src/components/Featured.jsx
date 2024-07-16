@@ -4,7 +4,7 @@ import {cards} from '../utils/cards'
 const Featured = () => {
   return (
     <section className='w-full min-h-screen bg-zinc-900 text-white pt-14 pb-32 lg:pt-90 lg:pb-150 '>
-          <div className="heading px-20 text-8xl font-[NeueMontreal] font-light pb-8 border-b-2 border-zinc-800">
+          <div className="heading px-20 text-8xl font-[NeueMontreal] font-light pb-10 border-b-2 border-zinc-800">
               Featured Projects
           </div>
           <div className="cards w-full grid grid-col-1  md:grid-cols-2 px-20 py-24 gap-10">
