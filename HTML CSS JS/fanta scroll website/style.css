@@ -80,6 +80,7 @@ nav i {
     object-fit: contain;
     z-index: 2;
     position: absolute;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) ;
 }
 
 #orange-cut {
@@ -88,6 +89,7 @@ nav i {
     top: 10%;
     left: 32%;
     z-index: 1;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 #orange {
@@ -96,6 +98,7 @@ nav i {
     top: 55%;
     right: 30%;
     z-index: 3;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 #leaf {
