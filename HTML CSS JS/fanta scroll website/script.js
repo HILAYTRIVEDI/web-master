@@ -28,3 +28,32 @@ tl.to("#orange", {
     right: "-10%",
     scale: 0.8,
 },'orange')
+
+
+const tl2 = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".three",
+        start: "0% 95%",
+        end: "20% 50%",
+        scrub: true,
+        markers: true,
+    },
+})
+
+tl2.from("#lemon",{
+    rotate: "-90%",
+    left: "100%",
+    top: "-110%",
+},'ca')
+
+tl2.to("#fanta",{
+    top:"200%",
+    left:"30%",
+},'ca')
+
+tl2.to("#orange-cut",{
+    top:"200%",
+    left:"42%",
+    scale:1.5,
+    rotateZ:180,
+},'ca')
