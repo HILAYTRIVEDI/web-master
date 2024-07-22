@@ -15,7 +15,7 @@ export default function Home() {
             height={1000}
             className='mb-12 h-10 w-fit'
           />
-          <div className="form mt-32">
+          <div className="form mt-12">
             <PatientForm />
           </div>
           <div className="copyright text-14-regular mt-20 flex justify-between items-center">

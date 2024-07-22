@@ -19,7 +19,10 @@ import { Input } from "@/components/ui/input"
 
 const formSchema = z.object({
     username: z.string().min(2, {
-        message: "Username must be at least 2 characters.",
+        message: "Full name must be at least 2 characters.",
+    }),
+    email: z.string().email({
+        message: "Please enter a valid email address.",
     }),
 })
 
@@ -38,24 +41,38 @@ const  PatientForm = () => {
 
     return(
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                <section className="flex flex-col my-16">
+                    <h1 className="text-4xl font-bold">Hi there, ....</h1>
+                    <p className="mt-5 text-lg -tracking-tighter">Get Started with Appointments.</p>
+                </section>
                 <FormField
                     control={form.control}
                     name="username"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Username</FormLabel>
+                            <FormLabel>Full Name</FormLabel>
                             <FormControl>
-                                <Input placeholder="shadcn" {...field} />
+                                <Input placeholder="Please enter your full name" {...field} />
                             </FormControl>
-                            <FormDescription>
-                                This is your public display name.
-                            </FormDescription>
                             <FormMessage />
                         </FormItem>
                     )}
                 />
-                <Button type="submit">Submit</Button>
+                <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>Email Adderess </FormLabel>
+                            <FormControl>
+                                <Input placeholder="Please enter your email" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+                <Button type="submit" className="w-full bg-green-500 hover:bg-dark-500 text-white">Submit</Button>
             </form>
         </Form>
     )
