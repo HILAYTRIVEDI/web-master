@@ -14,7 +14,7 @@ import SubmitButton from "../SubmitButton"
 import { useState } from "react"
 
 const formSchema = z.object({
-    username: z.string().min(2, {
+    name: z.string().min(2, {
         message: "Full name must be at least 2 characters.",
     }),
     email: z.string().email({
@@ -39,8 +39,11 @@ const PatientForm = () =>
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            username: "",
+            name: "",
+            email: "",
+            phone: "",
         },
+
     })
 
     function onSubmit(values: z.infer<typeof formSchema>)
