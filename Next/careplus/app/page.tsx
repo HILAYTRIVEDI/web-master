@@ -11,14 +11,14 @@ export default function Home() {
           <Image
             src="/assets/icons/logo-full.svg"
             alt="Careplus Logo"
-            width={1000}
-            height={1000}
-            className='mb-12 h-10 w-fit'
+            width={500}
+            height={250}
+            className='mb-1 h-10 w-fit'
           />
           <div className="form mt-12">
             <PatientForm />
           </div>
-          <div className="copyright text-14-regular mt-20 flex justify-between items-center">
+          <div className="copyright text-14-regular mt-10 flex justify-between items-center">
             <p className='justify-items-end text-dark-600 xl:text-left'>
               @carepulse copyright
             </p>
@@ -33,7 +33,7 @@ export default function Home() {
         alt='Onboarding Background'
         width={1000}
         height={1080}
-        className='side-img max-w-[50%]'
+        className='side-img h-full max-w-[50%]'
       />
     </div>
   )}

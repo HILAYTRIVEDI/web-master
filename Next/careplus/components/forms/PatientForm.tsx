@@ -10,6 +10,8 @@ import
     Form
 } from "@/components/ui/form"
 import CustomFormField from "../CustomFormField"
+import SubmitButton from "../SubmitButton"
+import { useState } from "react"
 
 const formSchema = z.object({
     username: z.string().min(2, {
@@ -45,11 +47,13 @@ const PatientForm = () =>
     {
         console.log(values)
     }
+    
+    const [isLoading, setIsLoading] = useState(false);
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-                <section className="flex flex-col my-16">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <section className="flex flex-col my-8">
                     <h1 className="text-4xl font-bold">Hi there, ....</h1>
                     <p className="mt-5 text-lg -tracking-tighter">Get Started with Appointments.</p>
                 </section>
@@ -80,7 +84,9 @@ const PatientForm = () =>
                     label="Phone number"
                     placeholder="(555) 123-4567"
                 />
-                <Button type="submit" className="w-full bg-green-500 hover:bg-dark-500 text-white">Submit</Button>
+                <SubmitButton isLoading={isLoading}>
+                    Get Started
+                </SubmitButton>
             </form>
         </Form>
     )
