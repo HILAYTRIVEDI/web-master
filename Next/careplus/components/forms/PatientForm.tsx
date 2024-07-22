@@ -53,15 +53,32 @@ const PatientForm = () =>
                     <h1 className="text-4xl font-bold">Hi there, ....</h1>
                     <p className="mt-5 text-lg -tracking-tighter">Get Started with Appointments.</p>
                 </section>
-                <CustomFormField 
-                    control={form.control}
+                <CustomFormField
                     formFieldType={FormFieldType.INPUT}
+                    control={form.control}
                     name="name"
-                    label="Full Name"
+                    label="Full name"
                     placeholder="John Doe"
                     iconSrc="/assets/icons/user.svg"
-                    iconAlt="User Icon"
+                    iconAlt="user"
+                />
 
+                <CustomFormField
+                    formFieldType={FormFieldType.INPUT}
+                    control={form.control}
+                    name="email"
+                    label="Email"
+                    placeholder="johndoe@gmail.com"
+                    iconSrc="/assets/icons/email.svg"
+                    iconAlt="email"
+                />
+
+                <CustomFormField
+                    formFieldType={FormFieldType.PHONE_INPUT}
+                    control={form.control}
+                    name="phone"
+                    label="Phone number"
+                    placeholder="(555) 123-4567"
                 />
                 <Button type="submit" className="w-full bg-green-500 hover:bg-dark-500 text-white">Submit</Button>
             </form>
