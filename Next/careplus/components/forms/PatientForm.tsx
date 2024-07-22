@@ -6,16 +6,10 @@ import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { Button } from "@/components/ui/button"
 import
-    {
-        Form,
-        FormControl,
-        FormDescription,
-        FormField,
-        FormItem,
-        FormLabel,
-        FormMessage,
-    } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
+{
+    Form
+} from "@/components/ui/form"
+import CustomFormField from "../CustomFormField"
 
 const formSchema = z.object({
     username: z.string().min(2, {
@@ -24,9 +18,22 @@ const formSchema = z.object({
     email: z.string().email({
         message: "Please enter a valid email address.",
     }),
+    phone: z.string().regex(/^\+[0-9]{2}\s[0-9]{3}\s[0-9]{3}\s[0-9]{4}$/),
 })
 
-const  PatientForm = () => {
+export enum FormFieldType{
+    INPUT = "input",
+    CHECKBOX = "checkbox",
+    EMAIL = "email",
+    PHONE_INPUT = "phoneInput",
+    TEXTAREA = "textarea",
+    DATE_PICKER = "datePicker",
+    SELECT = "select",
+    SKELETON = "skeleton",
+}
+
+const PatientForm = () =>
+{
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -39,38 +46,22 @@ const  PatientForm = () => {
         console.log(values)
     }
 
-    return(
+    return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                 <section className="flex flex-col my-16">
                     <h1 className="text-4xl font-bold">Hi there, ....</h1>
                     <p className="mt-5 text-lg -tracking-tighter">Get Started with Appointments.</p>
                 </section>
-                <FormField
+                <CustomFormField 
                     control={form.control}
-                    name="username"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Full Name</FormLabel>
-                            <FormControl>
-                                <Input placeholder="Please enter your full name" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-                <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Email Adderess </FormLabel>
-                            <FormControl>
-                                <Input placeholder="Please enter your email" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
+                    formFieldType={FormFieldType.INPUT}
+                    name="name"
+                    label="Full Name"
+                    placeholder="John Doe"
+                    iconSrc="/assets/icons/user.svg"
+                    iconAlt="User Icon"
+
                 />
                 <Button type="submit" className="w-full bg-green-500 hover:bg-dark-500 text-white">Submit</Button>
             </form>
