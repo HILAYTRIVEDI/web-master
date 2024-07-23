@@ -13,6 +13,7 @@ import CustomFormField from "../CustomFormField"
 import SubmitButton from "../SubmitButton"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
+import { createUser } from "@/lib/actions/patient.actions"
 
 const formSchema = z.object({
     name: z.string().min(2, {
@@ -55,13 +56,13 @@ const PatientForm = () =>
         setIsLoading(true);
 
         try{
-            // const userData = { name: values.name, email: values.email, phone: values.phone }
+            const userData = { name: values.name, email: values.email, phone: values.phone }
 
-            // const user = await createUser(userData);
+            const user = await createUser(userData);
 
-            // if(user){
-            //     router.push(`/patients/${user.id}/register`)
-            // }
+            if(user){
+                router.push(`/patients/${user.id}/register`)
+            }
         }
         catch(error){
             console.log(error)

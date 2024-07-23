@@ -11,7 +11,7 @@ client.setEndpoint(NEXT_PUBLIC_ENDPOINT!)
     .setProject(PROJECT_ID!)
     .setKey(API_KEY!);
 
-export const Databases = new sdk.Databases(client);
-export const Storage = new sdk.Storage(client);
-export const Users = new sdk.Users(client);
+export const database = new sdk.Databases(client);
+export const storage = new sdk.Storage(client);
+export const users = new sdk.Users(client);
 export const messaging = new sdk.Messaging(client);
