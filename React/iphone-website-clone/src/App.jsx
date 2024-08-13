@@ -2,7 +2,11 @@ import React from 'react'
 
 const App = () => {
   return (
-    <div>App</div>
+    <main className='bg-black'>
+        {/* Navbar */}
+        {/* Hero */}
+        {/* Features */}
+    </main>
   )
 }
 
