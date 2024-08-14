@@ -6,7 +6,7 @@ function Model(props)
 {
     const { nodes, materials } = useGLTF('/models/scene.glb')
     const texture = useTexture(props.item?.img || props.item.image)
-    
+
     useEffect(() =>
     {
         Object.entries(materials).map((material) =>
@@ -139,7 +139,12 @@ function Model(props)
                 geometry={nodes.xXDHkMplTIDAXLN.geometry}
                 material={materials.pIJKfZsazmcpEiU}
                 scale={0.01}
-            />
+            >
+                <meshStandardMaterial
+                    roughness={1}
+                    map={texture}
+                />
+            </mesh>
             <mesh
                 castShadow
                 receiveShadow
