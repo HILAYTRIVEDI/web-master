@@ -1,10 +1,11 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useGLTF, useTexture } from '@react-three/drei'
 import * as THREE from 'three'
 
-export function Model(props)
+function Model(props)
 {
-    const texture = useTexture(props.item.img)
+    const { nodes, materials } = useGLTF('/models/scene.glb')
+    const texture = useTexture(props.item.image)
 
     useEffect(() =>
     {
@@ -22,10 +23,10 @@ export function Model(props)
                 material[1].color = new THREE.Color(props.item.color[0]);
             }
             material[1].needsUpdate = true;
+           
         });
-    }, [materials, props.item]);
+    }, [materials]);
 
-    const { nodes, materials } = useGLTF('/models/scene.glb')
     return (
         <group {...props} dispose={null}>
             <mesh
