@@ -28,6 +28,7 @@ const Model = () =>
         })
     })
 
+
     // Camera control for model view
     const cameraControlSmall = useRef();
     const cameraControlLarge = useRef();
