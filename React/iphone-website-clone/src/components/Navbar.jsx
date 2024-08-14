@@ -23,7 +23,7 @@ const Navbar = () => {
                 ))}
             </div>
             {/* Search and Bag */}
-            <div className='flex items-center justify-center'>
+            <div className='flex items-center justify-center gap-7'>
                 <img src={searchImg} alt="search icon" width={18} height={18}/>
                 <img src={bagImg} alt="bag icon" width={18} height={18}/>
             </div>
