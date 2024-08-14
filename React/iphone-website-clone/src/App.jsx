@@ -7,7 +7,6 @@ const App = () =>
 {
   return (
     <main className='bg-black'>
-      return <button onClick={() => methodDoesNotExist()}>Break the world</button>;
       <Navbar />
       <Hero />
       <Highlights />

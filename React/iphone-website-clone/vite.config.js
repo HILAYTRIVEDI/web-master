@@ -7,6 +7,9 @@ export default defineConfig({
   plugins: [react(), sentryVitePlugin({
     org: "hilay",
     project: "javascript-react"
+  }), sentryVitePlugin({
+    org: "hilay",
+    project: "javascript-react"
   })],
 
   build: {
