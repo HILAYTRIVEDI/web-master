@@ -1,12 +1,14 @@
 import React from 'react'
-import { Navbar, Hero, Highlights } from './components'
+import { Navbar, Hero, Highlights, Model } from './components'
 
-const App = () => {
+const App = () =>
+{
   return (
     <main className='bg-black'>
-       <Navbar />
-       <Hero />
-       <Highlights />
+      <Navbar />
+      <Hero />
+      <Highlights />
+      <Model />
     </main>
   )
 }
