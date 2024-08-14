@@ -23,7 +23,7 @@ const ModelView = ({
             className={`w-full h-full absolute ${index === 2 ? 'right-[-100%]' : ''}`}
         >
             {/* Ambient light */}
-            <ambientLight intensity={0.5} />
+            <ambientLight intensity={0.3} />
 
             {/* Camera */}
             <PerspectiveCamera
