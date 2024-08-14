@@ -5,13 +5,12 @@ import * as THREE from 'three'
 function Model(props)
 {
     const { nodes, materials } = useGLTF('/models/scene.glb')
-    const texture = useTexture(props.item.image)
-
+    const texture = useTexture(props.item?.img || props.item.image)
+    
     useEffect(() =>
     {
         Object.entries(materials).map((material) =>
         {
-            // these are the material names that can't be changed color
             if (
                 material[0] !== "zFdeDaGNRwzccye" &&
                 material[0] !== "ujsvqBWRMnqdwPx" &&
@@ -25,7 +24,7 @@ function Model(props)
             material[1].needsUpdate = true;
            
         });
-    }, [materials]);
+    }, [materials, props.item]);
 
     return (
         <group {...props} dispose={null}>
