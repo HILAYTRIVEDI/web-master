@@ -22,7 +22,15 @@ const Hero = () =>
   {
     gsap.to('#hero', {
       duration: 1,
+      delay:1.5,
       opacity: 1,
+      ease: 'power1.inOut'
+    }),
+    gsap.to('#cta', {
+      duration: 1,
+      delay:2,
+      opacity: 1,
+      translateY: -50,
       ease: 'power1.inOut'
     })
   }, [])
@@ -38,6 +46,14 @@ const Hero = () =>
             />
           </video>
         </div>
+      </div>
+      <div id="cta"  className="flex flex-col items-center opacity-0 translate-y-20">
+        <a className='btn' href="#highlights">
+          Buy
+        </a>
+        <p className='font-normal text-xl'>
+          From $199/month or $999 
+        </p>
       </div>
     </section>
   )
