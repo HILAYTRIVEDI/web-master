@@ -15,15 +15,29 @@ const HowItWorks = () =>
         trigger: '#chip',
         start: '20% bottom'
       },
+      onComplete: () =>
+      {
+        videoRef.current.play();
+      },
       opacity: 0,
       scale: 2,
       duration: 2,
       ease: 'power2.inOut'
     })
-
     animateWithGsap('.g_fadeIn', {
       opacity: 1,
       y: 0,
+      duration: 1,
+      ease: 'power2.inOut'
+    })
+
+    gsap.to('#game-video', {
+      scrollTrigger: {
+        trigger: '#game-video',
+        toggleActions: 'play pause reverse restart',
+        start: '-10% bottom',
+      },
+      opacity: 1,
       duration: 1,
       ease: 'power2.inOut'
     })
@@ -57,7 +71,7 @@ const HowItWorks = () =>
               />
             </div>
             <div className="hiw-video">
-              <video className="pointer-events-none" playsInline preload="none" muted autoPlay ref={videoRef}>
+              <video id='game-video' className="pointer-events-none" playsInline preload="none" muted autoPlay ref={videoRef}>
                 <source src={frameVideo} type="video/mp4" />
               </video>
             </div>
