@@ -5,21 +5,39 @@ import { useState } from 'react';
 import Button from './Button';
 import MenuSvg from '../../public/assets/svg/MenuSvg';
 import { HambugerMenu } from './design/Header';
+import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 
 const Header = () =>
 {
     const [openNavigation, setOpenNavigation] = useState(false);
 
-    const toggleNavigation = () => setOpenNavigation(!openNavigation);
+    const toggleNavigation = () => {
+        setOpenNavigation(!openNavigation)
+
+        if (openNavigation) {
+            disablePageScroll();
+        } else {
+            enablePageScroll();
+        }
+    };
+
+    const handleClick = (e) => {
+        e.preventDefault();
+        
+        if(!openNavigation) return;
+
+        enablePageScroll();
+        setOpenNavigation(false);
+    }
 
     const pathname = useLocation();
     return (
         <header className={`
-            w-full fixed top-0 left-0 z-50 bg-n-8/90 backdrop-blur-sm border-b border-n-6 lg:bg-n-8/90
+            w-full fixed top-0 left-0 z-50 bg-n-8/90  border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm
             ${openNavigation ? 'bg-n-8' : 'bg-n-8/90 backdrop-blur-sm'}
         `}>
             <div className='flex items-center justify-between px-5 lg:px-[7.5rem] xl:px-10 max-lg:py-4'>
-                <a className='flex-1 block w-[12rem] xl:mr-8' href='#hero'>
+                <a className='block w-[12rem] xl:mr-8' href='#hero'>
                     <img
                         src={brainwave}
                         alt='BrainWave Logo'
@@ -37,6 +55,7 @@ const Header = () =>
                                 <a
                                     key={item.id}
                                     href={item.url}
+                                    onClick={handleClick}
                                     className={
                                         `
                                             block relative font-code text-3xl uppercase text-n-1 transition-colors hover:text-color-1
@@ -51,8 +70,8 @@ const Header = () =>
                                 </a>
                             ))
                         }
-                        <HambugerMenu/>
-                    </div>
+                        </div>
+                    <HambugerMenu/>
                 </nav>
                 <a
                     href="#signup"
