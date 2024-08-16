@@ -1,4 +1,4 @@
-import { curve } from "../../public/assets"
+import { curve,heroBackground,robot } from "../../public/assets"
 import Button from "./Button"
 import Section from "./Section"
 
@@ -39,6 +39,33 @@ const Hero = () =>
                     >
                         Get Started
                     </Button>
+                </div>
+                <div className="relative max-2-[23re] mx-auto
+                md:max-w-5xl xl:mb-22
+                ">
+                    <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient">
+                        <div className="reltive bg-n-8 rounded-[1rem]">
+                            <div className="h-[1.4rem] bg-n-10 rounded-t-[0.9rem]"/>
+                            <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
+                                <img
+                                    src={robot}
+                                    className="w-full scale-[1.7] translate-y-[8%] md:scale-100 md:-tanslate-y-[10%] lg:-translate-y-[20%]"
+                                    width={1024}
+                                    height={490}
+                                    alt="ai"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]">
+                        <img
+                            src={heroBackground}
+                            className="w-full"
+                            alt="hero"
+                            width={1440}
+                            height={1800}
+                        />
+                    </div>
                 </div>
             </div>
         </Section>
