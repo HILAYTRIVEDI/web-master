@@ -1,11 +1,15 @@
-import { curve,heroBackground,robot } from "../../public/assets"
+import { curve, heroBackground, robot } from "../../public/assets"
 import Button from "./Button"
 import Section from "./Section"
+import { BackgroundCircles, BottomLine, Gradient, } from "./design/Hero"
+import { heroIcons } from "../constants"
+import { ScrollParallax } from "react-just-parallax"
+import { useRef } from "react"
 
 const Hero = () =>
 {
+    const parallexRef = useRef(null);
     return (
-
         <Section
             className='pt-[12rem] -mt-[5.25rem]'
             crosses
@@ -17,7 +21,7 @@ const Hero = () =>
                     <h1 className="h1 mb-6">
                         Explore The Possiblities of AI chatting with Brain Wave
                         <span className="inline-block relative ">
-                            {" "} Brainwave 
+                            {" "} Brainwave
                             <img
                                 className="absolute top-full left-0 w-full xl:mt-2"
                                 src={curve}
@@ -45,7 +49,7 @@ const Hero = () =>
                 ">
                     <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient">
                         <div className="reltive bg-n-8 rounded-[1rem]">
-                            <div className="h-[1.4rem] bg-n-10 rounded-t-[0.9rem]"/>
+                            <div className="h-[1.4rem] bg-n-10 rounded-t-[0.9rem]" />
                             <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
                                 <img
                                     src={robot}
@@ -54,6 +58,16 @@ const Hero = () =>
                                     height={490}
                                     alt="ai"
                                 />
+                                <ScrollParallax isAbsolutelyPositioned>
+                                    <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl xl:flex">
+                                        {heroIcons.map((icon, index) => (
+                                            <li className="p-5" key={index}>
+                                                <img src={icon} width={24} height={25} alt={icon} />
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </ScrollParallax>
+
                             </div>
                         </div>
                     </div>
