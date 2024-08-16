@@ -16,7 +16,7 @@ const Button = ({ className, children, href, px, white, onClick }) =>
     );
 
     const renderLink = () => (
-        <a className={classes} href={href}>
+        <a className={classes} href={href} onClick={onClick}>
             <span className={spanClasses}>
                 {children}
             </span>

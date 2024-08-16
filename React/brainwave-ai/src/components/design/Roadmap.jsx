@@ -1,4 +1,4 @@
-import { gradient } from "../../assets";
+import { gradient } from "../../../public/assets";
 
 export const Gradient = () => {
   return (
