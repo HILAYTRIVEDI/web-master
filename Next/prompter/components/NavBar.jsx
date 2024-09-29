@@ -61,7 +61,7 @@ const NavBar = () => {
                 <>
                   {
                     providers && 
-                    object.values(providers).map((provider, index) => (
+                    Object.values(providers).map((provider, index) => (
                       <button
                         key={index}
                         type='button'
@@ -81,7 +81,7 @@ const NavBar = () => {
                 isUserLoggedIn ? (
                   <div className='flex'>
                     <Image
-                      src="/assets/images/logo.svg"
+                      src={session?.user.image}
                       alt="Profile"
                       width={37}
                       height={37}
@@ -124,7 +124,7 @@ const NavBar = () => {
                   <>
                     {
                       providers &&
-                      object.values(providers).map((provider, index) => (
+                      Object.values(providers).map((provider, index) => (
                         <button
                           key={index}
                           type='button'
