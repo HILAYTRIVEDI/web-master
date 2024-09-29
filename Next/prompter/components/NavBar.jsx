@@ -8,10 +8,12 @@ import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
 
 const NavBar = () => {
 
-  const isUserLoggedIn = true
-
+  
   const [ providers, setProviders ] = useState(null)
   const [ togglDropdown, setTogglDropdown ] = useState(false)
+  
+  const { data:session } = useSession()
+  const isUserLoggedIn = session?.user;
 
   useEffect(() => {
     const setResponse = async () => {

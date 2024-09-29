@@ -1,5 +1,4 @@
 import mongoose, { Schema, model, models } from "mongoose";
-import { use } from "react";
 
 const userSchema = new Schema({
     email : {
