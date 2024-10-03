@@ -9,8 +9,6 @@ export const connectToDB = async () => {
         console.log("Already connected to the database");
         return;
     } else {
-        console.log(process.env.MONGODB_URI);
-        
         try {
             await mongoose.connect(process.env.MONGODB_URI, {
                 dbName: "share_promt",
