@@ -18,7 +18,7 @@ const Feed = () =>
     }
 
     fetchPosts()
-  }, [])
+  }, [])  
 
   const handleSearchChange = (e) =>{
     e.preventDefault();
