@@ -3,9 +3,10 @@
 import Image from "next/image"
 import { useState } from "react"
 
-const PromptCard = ({ data, handleTagClick }) =>
+const PromptCard = ({ data, handleTagClick, handleEditClick, handleDeleteClick }) =>
 {
   const [copyPrompt, setCopyPrompt] = useState(false);
+  
   const handleClick = () =>
   {
     navigator.clipboard.writeText(data.prompt)
@@ -21,19 +22,13 @@ const PromptCard = ({ data, handleTagClick }) =>
             className='btn'
             onClick={handleClick}
           >
-            {
-              copyPrompt ? (
-                <p className="text-center text-xs">Copied!</p>
-              ) : (
                 <Image
-                  src="/assets/icons/copy.svg"
+                  src={copyPrompt ? "/assets/icons/tick.svg" : "/assets/icons/copy.svg"}
                   alt="Copy"
                   width={20}
                   height={20}
                   className='object-contain'
                 />
-              )
-            }
           </button>
         </div>
         <button
