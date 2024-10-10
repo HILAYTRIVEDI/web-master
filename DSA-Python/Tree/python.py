@@ -5,7 +5,11 @@ class TreeNode:
         self.parent=None
     
     def addChild(self,data):
+        child.parent = self
         self.children.append(TreeNode(data))
+    
+    def remove_last_child(self):
+        slef.children.pop()
 
     def addChildAt(self,data,index):
         self.children.insert(index,TreeNode(data))
