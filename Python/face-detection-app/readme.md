@@ -15,13 +15,13 @@ This project implements real-time face detection using OpenCV and Haar Cascade C
 ## Installation
 
 1. Clone the repository:
-   ```bash
+   ```
    git clone https://github.com/your-username/face-detection-opencv.git
    cd face-detection-opencv
    ```
 
 2. Install the required libraries:
-   ```bash
+   ```
    pip install opencv-python
    ```
 
@@ -33,7 +33,7 @@ This project implements real-time face detection using OpenCV and Haar Cascade C
 ## Usage
 
 To start the face detection application, run:
-```bash
+```
 python face_detection.py
 ```
 
